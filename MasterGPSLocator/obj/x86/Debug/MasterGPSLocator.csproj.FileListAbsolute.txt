@@ -1,0 +1,8 @@
+E:\2_工作和软件\1_工作存档\01长虹爱联\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\bin\x86\Debug\TD1030_MasterGPSLocator_V1.0.0beta.exe.config
+E:\2_工作和软件\1_工作存档\01长虹爱联\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\bin\x86\Debug\TD1030_MasterGPSLocator_V1.0.0beta.exe
+E:\2_工作和软件\1_工作存档\01长虹爱联\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\bin\x86\Debug\TD1030_MasterGPSLocator_V1.0.0beta.pdb
+E:\2_工作和软件\1_工作存档\01长虹爱联\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\obj\x86\Debug\MasterGPSLocator.MainForm.resources
+E:\2_工作和软件\1_工作存档\01长虹爱联\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\obj\x86\Debug\MasterGPSLocator.Properties.Resources.resources
+E:\2_工作和软件\1_工作存档\01长虹爱联\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\obj\x86\Debug\MasterGPSLocator.csproj.GenerateResource.Cache
+E:\2_工作和软件\1_工作存档\01长虹爱联\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\obj\x86\Debug\TD1030_MasterGPSLocator_V1.0.0beta.exe
+E:\2_工作和软件\1_工作存档\01长虹爱联\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\obj\x86\Debug\TD1030_MasterGPSLocator_V1.0.0beta.pdb

@@ -1,0 +1,65 @@
+
+
+正在确认模块上电，请插入模块后按下空格...
+测试中...
+设备未claim  FAIL
+详细：Microsoft Windows [版本 10.0.17134.285]
+(c) 2018 Microsoft Corporation。保留所有权利。
+
+E:\2_工作和软件\1_工作存档\01长虹爱联\微软项目\2_source\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\bin\x86\Release>CD Microsoft Azure Sphere SDK
+
+E:\2_工作和软件\1_工作存档\01长虹爱联\微软项目\2_source\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\bin\x86\Release\Microsoft Azure Sphere SDK>InitializeCommandPrompt
+
+E:\2_工作和软件\1_工作存档\01长虹爱联\微软项目\2_source\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\bin\x86\Release\Microsoft Azure Sphere SDK>azsphere device show-ota-status
+'show-ota-status' is not a valid value for the 'Operation' command line option.
+  Possible argument values include: 'capability', 'claim', 'image', 'link-feed', 'manufacturing-state', 'prep-debug', 'prep-field', 'recover', 'restart', 'show-attached', 'show-cloud', 'sideload', 'update-devicegroup', 'update-sku', 'wifi'.
+
+Azure Sphere Utility version 2.0.2.25529
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+    Manage devices.
+
+Required Parameters:
+    <Operation>
+        cap, capability          - Manage device capability configurations.
+        claim                    - Claim a previously unclaimed device in your
+                                   Azure Sphere tenant.
+        img, image               - Manage device images.
+        link-feed                - Link a device to a feed, optionally adding a
+                                   new image to the feed.
+        mfg, manufacturing-state - Manage the manufacturing state of attached
+                                   devices.
+        prep-debug               - Set up a device for local debugging,
+                                   including disabling over-the-air application
+                                   updates.
+        prep-field               - Set up a device to receive updates
+                                   over-the-air.
+        recover                  - Use recovery mode to load new firmware onto
+                                   the device.
+        restart                  - Restart the attached device.
+        show-attached            - Show the details of the attached device.
+        show-cloud               - Show the details of the given device from
+                                   your Azure Sphere tenant.
+        sl, sideload             - Deploy and manage applications on the
+                                   attached device.
+        update-devicegroup       - Move a device into a given device group in
+                                   your Azure Sphere tenant.
+        update-sku               - Set the Product SKU of a given device in
+                                   your Azure Sphere tenant.
+        wifi                     - Manage WiFi configurations for the attached
+                                   device.
+
+Optional Parameters:
+    -?, --help    - Show help information.
+    -v, --verbose - Show additional information.
+
+E:\2_工作和软件\1_工作存档\01长虹爱联\微软项目\2_source\泰斗TD 1030\2_source\MasterGPSLocator\MasterGPSLocator\bin\x86\Release\Microsoft Azure Sphere SDK>exit
+  
+
+########    ###     ####  ##
+##         ## ##     ##   ##
+##        ##   ##    ##   ##
+######   ##     ##   ##   ##
+##       #########   ##   ##
+##       ##     ##   ##   ##
+##       ##     ##  ####  ########
