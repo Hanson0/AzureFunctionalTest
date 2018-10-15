@@ -1,0 +1,19 @@
+
+
+2018/10/11 21:39:40 正在确认模块上电，请插入模块后按下空格键...
+2018/10/11 21:41:41 测试中...
+2018/10/11 21:42:04 未上电连接上设备，请检查连接或驱动  FAIL
+详细：
+error: Could not connect to the device. Check if your device is connected and your PC has been configured correctly, then retry.
+error: Failed to retrieve data from the device. Check if your device is connected and is up to date, then retry.
+error: An error occurred.
+error: Command failed in 00:00:22.6193712.
+  
+2018/10/11 21:42:04 
+########    ###     ####  ##
+##         ## ##     ##   ##
+##        ##   ##    ##   ##
+######   ##     ##   ##   ##
+##       #########   ##   ##
+##       ##     ##   ##   ##
+##       ##     ##  ####  ########

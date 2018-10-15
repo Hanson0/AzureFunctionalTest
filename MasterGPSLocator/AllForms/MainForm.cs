@@ -57,8 +57,8 @@ namespace MasterGPSLocator
                 (lblCustomerInfo = new Label()),
                 (lblPlanCode = new Label())
             };
-            lblProductModle.Text = ProductionInfo.ProductModel;
-            lblCustomerInfo.Text = ProductionInfo.CustomerName;
+            lblProductModle.Text = "产品型号："+ProductionInfo.ProductModel;
+            lblCustomerInfo.Text = "客户信息："+ProductionInfo.CustomerName;
 
 
             // 初始化创建的Label
@@ -101,7 +101,7 @@ namespace MasterGPSLocator
         private TableLayoutPanel CreateTlp()
         {
             //tlp
-            int xPosition = 80;
+            int xPosition = 40;
             TableLayoutPanel tlp = new TableLayoutPanel();
             tlp.Parent = picFormMainHeader;
             tlp.BackColor = Color.Transparent;
@@ -127,9 +127,9 @@ namespace MasterGPSLocator
                 label.AutoSize = true;
                 label.Dock = DockStyle.Fill;
                 label.BackColor = Color.Transparent;
-                label.Font = new Font("黑体", 20F);
+                label.Font = new Font("黑体", 12F);
                 label.ForeColor = Color.Black;
-                label.Margin = new Padding(2, 3, 2, 4);
+                label.Margin = new Padding(4, 4, 4, 4);
             }
         }
 
@@ -168,7 +168,7 @@ namespace MasterGPSLocator
         private void txtLabelSn_TextChanged(object sender, EventArgs e)
         {
             lblLabelSn.Visible = txtLabelSn.Text.Length < 1;
-            int snLength = 15;
+            int snLength = 12;
             if (txtLabelSn.Text.Length==snLength)
             {
                 if (!Regex.IsMatch(txtLabelSn.Text,@"[0-9A-Z]{12}"))
@@ -366,6 +366,7 @@ namespace MasterGPSLocator
         public void DisplayLog(string log)
         {
             string name = EnumControlWidget.txtLog.ToString();
+            log = System.DateTime.Now.ToString() + " "+log;
             SetText(name, log, true);
         }
 

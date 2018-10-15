@@ -1,0 +1,28 @@
+
+
+2018/10/12 10:33:14 正在确认模块上电，请插入模块后按下空格键...
+2018/10/12 10:33:15 测试中...
+2018/10/12 10:33:18 MAC检查：模块067C767D08C9，标签067C767D08C9 对比一致  PASS
+2018/10/12 10:33:18 当前程序删除中...
+2018/10/12 10:33:21 当前程序删除：成功 PASS
+2018/10/12 10:33:21 测试固件加载中...
+2018/10/12 10:33:22 加载测试固件：失败  FAIL
+详细：
+Unrecognized command line argument '20180925.img'.
+Azure Sphere Utility version 2.0.2.25529
+    Deploy an application to the attached device.
+Required Parameters:
+Optional Parameters:
+    -?, --help               - Show help information.
+    -m, --manualstart        - Do not automatically start the application after
+                               sideload.
+    -v, --verbose            - Show additional information.
+  
+2018/10/12 10:33:22 
+########    ###     ####  ##
+##         ## ##     ##   ##
+##        ##   ##    ##   ##
+######   ##     ##   ##   ##
+##       #########   ##   ##
+##       ##     ##   ##   ##
+##       ##     ##  ####  ########

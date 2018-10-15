@@ -31,9 +31,9 @@ namespace MasterGPSLocator.Uart
 
         private string testItemFlag;
 
-        private static ATReadCmd atSnRead;
+        private static ATReadCmd atReset;
         private static ATReadCmd atIccidRead;
-        private static ATReadCmd atImeiRead;
+        private static ATReadCmd atGPIOTest;
         private static ATReadCmd atEidRead;
         private static ATReadCmd atVersonRead;
 
@@ -93,19 +93,21 @@ namespace MasterGPSLocator.Uart
 
             this.frmMain = frmMain;
             flagDisplayUart = true;
-            sp = SerialPortFactory.GetSerialPort();
-            sp.DataReceived += Sp_DataReceived;
-            SpOpen();
+            //sp = SerialPortFactory.GetSerialPort();
+            //sp.DataReceived += Sp_DataReceived;
+            //SpOpen();
         }
          //<summary>
          //静态构造函数
          //</summary>
         static ReadWriteHandle()
         {
-            atSnRead = new ATReadCmd(ATReadCmd.ReadIdType.SnRead, "AT+CBSN\r\n", "+CBSN:");
-            atIccidRead = new ATReadCmd(ATReadCmd.ReadIdType.IccidRead, "AT+CCID\r\n", "+CCID:");
-            atImeiRead = new ATReadCmd(ATReadCmd.ReadIdType.ImeiRead, "AT+CGSN\r\n", "+CGSN:");
-            atEidRead = new ATReadCmd(ATReadCmd.ReadIdType.EidRead, "AT+CEID\r\n", "+CEID:");
+            atReset = new ATReadCmd(ATReadCmd.ReadIdType.Reset, "Reset System\r\n", "Get RST command");
+            //atIccidRead = new ATReadCmd(ATReadCmd.ReadIdType.IccidRead, "AT+CCID\r\n", "+CCID:");
+            atGPIOTest = new ATReadCmd(ATReadCmd.ReadIdType.GPIOTest, "Output Result\r\n", "PIN");
+            //atEidRead = new ATReadCmd(ATReadCmd.ReadIdType.EidRead, "AT+CEID\r\n", "+CEID:");
+            
+            
             //atVersonRead = new ATReadCmd(ATReadCmd.ReadIdType.VersonRead, "AT+CGMR\r\n", VersonStart);
 
             //atImeiWrite = new ATWriteCmd(ATWriteCmd.WriteIdType.ImeiWrite, "AT+EGMR=1,7,\"", "\"\r\n");
@@ -246,11 +248,11 @@ namespace MasterGPSLocator.Uart
 
             switch (readIdType)
             {
-                case ATReadCmd.ReadIdType.SnRead:
-                    atReadCmd = atSnRead;
+                case ATReadCmd.ReadIdType.Reset:
+                    atReadCmd = atReset;
                     break;
-                case ATReadCmd.ReadIdType.ImeiRead:
-                    atReadCmd = atImeiRead;
+                case ATReadCmd.ReadIdType.GPIOTest:
+                    atReadCmd = atGPIOTest;
                     break;
                 case ATReadCmd.ReadIdType.EidRead:
                     atReadCmd = atEidRead;
@@ -268,14 +270,14 @@ namespace MasterGPSLocator.Uart
 
             //发命令获取数据
             string readCmd = atReadCmd.Cmd;         //读取指令
-            if (ATCmdCommunication(readCmd) != 0)
+            string idKeySubstr = atReadCmd.IdKeySubstr;      //提取的关键字符串
+            if (ATCmdCommunication(readCmd, idKeySubstr) != 0)
             {
                 return null;
             }
 
             //借助关键字符串提取出相应的ID
-            string idKeySubstr = atReadCmd.IdKeySubstr.ToUpper();      //提取的关键字符串
-
+            //string idKeySubstr = atReadCmd.IdKeySubstr.ToUpper();      //提取的关键字符串
             if (readIdType == ATReadCmd.ReadIdType.VersonRead)
             {
                 #region AT+CGMR\r\n后面的
@@ -314,8 +316,9 @@ namespace MasterGPSLocator.Uart
                 {
                     if ((pos = line[i].IndexOf(idKeySubstr)) >= 0)
                     {
-                        string temp = line[i].Substring(pos + idKeySubstr.Length);
-                        id = System.Text.RegularExpressions.Regex.Replace(temp, @"[^0-9A-Z]", "");
+                        id = line[i].Substring(pos);
+                        //string temp = line[i].Substring(pos + idKeySubstr.Length);
+                        //id = System.Text.RegularExpressions.Regex.Replace(temp, @"[^0-9A-Z]", "");
                     }
                 }
             }
@@ -323,12 +326,25 @@ namespace MasterGPSLocator.Uart
             return id;
         }
 
+
+
+        public void ReadRestInfo(string successFlag)
+        {
+            do
+            {
+                if (recive.Contains(successFlag))
+                    {
+                        break;
+                    }
+            } while (true);
+        }
+
         /// <summary>
         /// AT指令通信
         /// </summary>
         /// <param name="cmd"></param>
         /// <returns></returns>
-        private int ATCmdCommunication(string cmd)
+        private int ATCmdCommunication(string cmd, string correctInfo)
         {
             int ret = -1;
             int retry = 5;                //循环4此没收到，重发AT指令
@@ -339,12 +355,12 @@ namespace MasterGPSLocator.Uart
             {
                 for (int i = 0; i < retry; i++)
                 {
-                    if (recive.Contains("OK"))
+                    if (recive.Contains(correctInfo))
                     {
                         ret = 0;
                         break;
                     }
-                    else if (recive.Contains("ERROR"))
+                    else if (recive.ToUpper().Contains("ERROR"))
                     {
                         sp.Write(cmd);
                     }

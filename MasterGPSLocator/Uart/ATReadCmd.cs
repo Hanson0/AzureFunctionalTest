@@ -10,7 +10,13 @@ namespace Production.IdReadWrite.Cmd
 
         private string cmd;
         private string idKeySubstr;
+        private string correctInfo;
 
+        public string CorrectInfo
+        {
+            get { return correctInfo; }
+            set { correctInfo = value; }
+        }
         public string Cmd
         {
             get
@@ -39,8 +45,8 @@ namespace Production.IdReadWrite.Cmd
 
         public enum ReadIdType
         {
-            SnRead,
-            ImeiRead,
+            Reset,
+            GPIOTest,
             EidRead,
             IccidRead,
             VersonRead,
@@ -53,6 +59,7 @@ namespace Production.IdReadWrite.Cmd
             this.type = type.ToString();
             this.cmd = cmd;
             this.idKeySubstr = idKeySubstr;
+            this.correctInfo=
 
             okStr = "OK";
             errorStr = "ERROR";

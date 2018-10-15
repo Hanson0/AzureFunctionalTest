@@ -353,7 +353,9 @@ namespace FactoryAuto.CommonFunc
                 path = path.Substring(0, path.LastIndexOf("\\") + 1) + "log\\";
 
                 DateTime dateTime = DateTime.Now;
-                string template = string.Format("01_{0}-{1}-{2}-{3}-{4}_{5}_{6}_", imei, iccid, imsi, eid, sn,
+                //string template = string.Format("01_{0}-{1}-{2}-{3}-{4}_{5}_{6}_", imei, iccid, imsi, eid, sn,
+                //    dateTime.ToString("yyyyMMdd"), dateTime.ToString("HHmmss"));
+                string template = string.Format("01_{0}_{1}_{2}_",  sn,
                     dateTime.ToString("yyyyMMdd"), dateTime.ToString("HHmmss"));
 
                 string type = ".log";

@@ -16,7 +16,6 @@ namespace MasterGPSLocator.ProductTest
 
         private static MyStopwatch stopwatch;//秒表
         private static ProductionTestFlow flow;
-
         /// <summary>
         /// 私有构造函数
         /// </summary>
@@ -25,6 +24,7 @@ namespace MasterGPSLocator.ProductTest
         {
             this.frmMain = frmMain;
             stopwatch = new MyStopwatch(frmMain.DisplayStopwatch);
+
             flow = new ProductionTestFlow(frmMain);
 
         }
@@ -58,7 +58,7 @@ namespace MasterGPSLocator.ProductTest
             //int ret = httpImeiSnDecorrelation.DataGetAndAnalysis("PLANTEST", "898602C99916C0362528", "864867040002025", "CH04027410010001", "898602C99916C0362528");
             //frmMain.ClearUILastTestState();
             //循环检测模块上电
-            frmMain.DisplayLog("正在确认模块上电，请插入模块后按下空格...\r\n");
+            frmMain.DisplayLog("正在确认模块上电，请插入模块后按下空格键...\r\n");
             flow.CheckModulePowerOn();
 
             //开始测试

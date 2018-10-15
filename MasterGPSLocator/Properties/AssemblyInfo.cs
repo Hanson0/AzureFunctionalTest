@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("TD1030_CNRtest_20180920_V1.0.0beta")]
-[assembly: AssemblyDescription("载噪比检测")]
+[assembly: AssemblyTitle("PowerOnTestMT3620")]
+[assembly: AssemblyDescription("MT3620开机检查")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ALINK")]
-[assembly: AssemblyProduct("MasterGPSLocator")]
+[assembly: AssemblyProduct("MT3620")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
